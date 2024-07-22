@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import MovieList from '../components/MovieList';
-import { searchMovies } from '../api/api';
+import MovieList from '../../components/MovieList/MovieList';
+import { searchMovies } from '../../components/api';
 import css from './MoviesPage.module.css';
 
 export default function MoviesPage() {

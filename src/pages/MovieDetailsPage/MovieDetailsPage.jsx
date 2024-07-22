@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, Outlet, useNavigate, useLocation } from 'react-router-dom';
-import { fetchMovieDetails } from '../api/api';
+import { fetchMovieDetails } from '../../components/api';
 import css from './MovieDetailsPage.module.css';
 
 export default function MovieDetailsPage() {

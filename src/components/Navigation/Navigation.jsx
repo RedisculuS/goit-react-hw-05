@@ -10,9 +10,6 @@ export const Navigation = () => {
   return (
     <header className={css.header}>
       <p className={css.logo}>
-        {/* <span role="img" aria-label="movie icon">
-          
-        </span>{" "} */}
         Find Movie You Like
       </p>
 
