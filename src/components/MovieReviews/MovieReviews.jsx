@@ -28,7 +28,7 @@ export default function MovieReviews() {
           {reviews.map((review) => (
             <li key={review.id} className={css.reviewWrapper}>
               <h3 className={css.reviewTextAuthor}>{review.author}</h3>
-              <p >{review.content}</p>
+              <p>{review.content}</p>
             </li>
           ))}
         </ul>

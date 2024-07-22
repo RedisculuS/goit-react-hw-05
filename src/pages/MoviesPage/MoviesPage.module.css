@@ -32,3 +32,8 @@
 .findBtn:hover, .findBtn:focus, .findBtn:active {
     color: black;
 }
+
+.noMovies {
+    text-align: center;
+    font-size: large;
+}

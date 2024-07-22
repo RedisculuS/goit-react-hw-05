@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, Link, Outlet, useNavigate, useLocation } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { useParams, NavLink, Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { fetchMovieDetails } from '../../components/api';
-import css from './MovieDetailsPage.module.css';
+import css from "./MovieDetailsPage.module.css";
 
 export default function MovieDetailsPage() {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
-
-  const previousLocation = location.state?.from || '/movies';
+  const previousLocation = useRef(location.state?.from || '/movies');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,15 +27,16 @@ export default function MovieDetailsPage() {
 
   return (
     <main>
-      <button className={css.backBtn} onClick={() => navigate(previousLocation)}>Go back</button>
+      <button className={css.backBtn} onClick={() => navigate(previousLocation.current)}>Go back</button>
+
       <div className={css.titleWrapper}><h1>{movie.original_title}</h1></div>
       <div className={css.imgWrapper}>
         <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.original_title} />
-      <p className={css.movieDescr}>{movie.overview}</p> 
+        <p className={css.movieDescr}>{movie.overview}</p> 
       </div>
       <nav className={css.navBarCastReviews}>
-        <Link className={css.linkNavBar} to="cast" state={{ from: previousLocation }}>Cast</Link>
-        <Link  className={css.linkNavBar} to="reviews" state={{ from: previousLocation }}>Reviews</Link>
+        <NavLink className={css.linkNavBar} to="cast" state={{ from: previousLocation.current }}>Cast</NavLink>
+        <NavLink className={css.linkNavBar} to="reviews" state={{ from: previousLocation.current }}>Reviews</NavLink>
       </nav>
       <Outlet />
     </main>
