@@ -1,0 +1,63 @@
+.backBtn {
+    padding: 8px 12px;
+  border-radius: 4px;
+  color: black;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: medium;
+  background-color: orangered;
+  color: white;
+  border: none;
+  transition: transform cubic-bezier(0.2); 
+  }
+  
+  .backBtn:hover , .backBtn:active, .backBtn:focus {
+    transform: scale(1.04);
+  }
+  
+  h1 {
+    text-align: center;
+  }
+
+  .titleWrapper {
+    background-color: lightgray;
+    padding: 8px;
+    margin: 8px;
+  }
+
+  .imgWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+ 
+  .movieDescr{
+    width: 30%;
+    font-size: larger;
+  }
+
+  .navBarCastReviews a {
+    text-decoration: none;
+
+  }
+
+  .navBarCastReviews {
+    text-align: center;
+    background-color: lightgray;
+    padding: 18px;
+  }
+
+  .linkNavBar {
+    padding: 16px;
+    font-weight: 500;
+    font-size: large;
+    color:black;
+  }
+
+  .linkNavBar:hover, .linkNavBar:focus {
+    color: orangered;
+  }

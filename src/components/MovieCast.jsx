@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovieCast } from '../api/api';
+import css from './MovieCast.module.css'
 
 export default function MovieCast() {
   const { movieId } = useParams();
@@ -21,11 +22,11 @@ export default function MovieCast() {
 
   return (
     <div>
-      <h2>Cast</h2>
+      <h2 className={css.castTitle}>Cast</h2>
       <ul>
         {cast.map((member) => (
           <li key={member.cast_id}>
-            {member.name} as {member.character}
+            {member.name} <span className={css.orangeText}>as </span>{member.character}
           </li>
         ))}
       </ul>

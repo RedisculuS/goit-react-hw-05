@@ -10,7 +10,7 @@ export default function MovieList({ movies }) {
       {movies.map((movie) => (
         <li key={movie.id}  className={css.cardWrapper}>
           <Link to={`/movies/${movie.id}`} state={{ from: location.pathname }}>
-            <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.original_title} />
+            <img className={css.posterFormatImg} src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.original_title} />
             <h3 className={css.movieName}>{movie.original_title}</h3>
           </Link>
         </li>

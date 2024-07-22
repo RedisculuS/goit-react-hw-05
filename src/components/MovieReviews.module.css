@@ -1,0 +1,22 @@
+.reviewsTitle {
+    text-align: center;
+    color: orangered;
+}
+
+.reviewWrapper{
+    background-color: lightgrey;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+}
+.reviewTextAuthor::before{
+    content: "<";
+    font-size: 1.5rem;
+    color:orangered;
+}
+
+.reviewTextAuthor::after {
+    content: ">";
+    font-size: 1.5rem;
+    color:orangered;
+}

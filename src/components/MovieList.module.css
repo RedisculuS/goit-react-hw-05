@@ -2,21 +2,45 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, 200px);
     gap: 16px;
+    margin: 50px;
   }
   
   .cardWrapper {
-    border: 1px solid black;
+    border: 1px solid darkgrey;
     border-radius: 4px;
+    background-color: rgb(238, 237, 237);
+
   }
   
   .cardWrapper a {
     text-decoration: none;
+    transition: transform cubic-bezier(0.2s);
+    
   }
   
   .movieName {
-    padding: 4px;
+    padding: 6px;
     margin-top: 8px;
     margin-bottom: 0;
     color: black;
+    text-align: center;
+  }
+
+
+  ul {
+    list-style: none;
   }
   
+  .posterFormatImg {
+    width: 100%;
+    border-radius: px;
+  }
+
+  .cardWrapper:hover, .cardWrapper:focus {
+    transform: scale(1.02);
+
+  }
+
+  .cardWrapper:active {
+    transform: scale(1.06);
+  }

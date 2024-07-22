@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import MovieList from '../components/MovieList';
 import { searchMovies } from '../api/api';
+import css from './MoviesPage.module.css';
 
 export default function MoviesPage() {
   const [query, setQuery] = useState('');
@@ -18,13 +19,17 @@ export default function MoviesPage() {
   return (
     <main>
       <h1>Movies</h1>
-      <input
+      <div className={css.findWrapper}>
+        <input
+      className={css.inputMovie}
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search for movies..."
       />
-      <button onClick={handleSearch}>Search</button>
+      <button className={css.findBtn} onClick={handleSearch}>Search</button>
+      </div>
+      
       <MovieList movies={movies} />
     </main>
   );

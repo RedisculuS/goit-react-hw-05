@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { fetchMovieDetails } from '../api/api';
+import css from './MovieDetailsPage.module.css';
 
 export default function MovieDetailsPage() {
   const { movieId } = useParams();
@@ -27,14 +28,15 @@ export default function MovieDetailsPage() {
 
   return (
     <main>
-      <button onClick={() => navigate(previousLocation)}>Go back</button>
-
-      <h1>{movie.original_title}</h1>
-      <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.original_title} />
-      <p>{movie.overview}</p>
-      <nav>
-        <Link to="cast" state={{ from: previousLocation }}>Cast</Link>
-        <Link to="reviews" state={{ from: previousLocation }}>Reviews</Link>
+      <button className={css.backBtn} onClick={() => navigate(previousLocation)}>Go back</button>
+      <div className={css.titleWrapper}><h1>{movie.original_title}</h1></div>
+      <div className={css.imgWrapper}>
+        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.original_title} />
+      <p className={css.movieDescr}>{movie.overview}</p> 
+      </div>
+      <nav className={css.navBarCastReviews}>
+        <Link className={css.linkNavBar} to="cast" state={{ from: previousLocation }}>Cast</Link>
+        <Link  className={css.linkNavBar} to="reviews" state={{ from: previousLocation }}>Reviews</Link>
       </nav>
       <Outlet />
     </main>

@@ -4,9 +4,6 @@ import css from './App.module.css';
 import NotFoundPage from './pages/NotFoundPage';
 import {Navigation} from './components/Navigation';
 
-// const buildlinksClass = ({isActive}) => {
-//   return clsx(css.link, isActive && css.active);
-// }
 
 const HomePage = lazy(() => import('./pages/HomePage'));
 const MoviesPage = lazy(() => import('./pages/MoviesPage'));
